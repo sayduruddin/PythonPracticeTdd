@@ -64,16 +64,71 @@ def test_p2_gain_advantage():
 
     assert game.score() == 'Advantage Player 2'
 
+def test_p1_gain_advantage_and_winner():
+    game = TennisGame()
+
+    add_points(game, 3, 3)
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Advantage Player 1'
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Player 1 wins'
+
+def test_p1_gain_advantage_and_loses_it_for_deuce():
+    game = TennisGame()
+
+    add_points(game, 3, 3)
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Advantage Player 1'
+
+    add_points(game, 0, 1)
+    assert game.score() == 'Deuce'
+
+def test_p1_gain_advantage_after_deuce_to_win():
+    game = TennisGame()
+
+    add_points(game, 3, 3)
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Advantage Player 1'
+
+    add_points(game, 0, 1)
+    assert game.score() == 'Deuce'
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Advantage Player 1'
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Player 1 wins'
+
+def test_p2_gain_advantage_after_deuce_to_win():
+    game = TennisGame()
+
+    add_points(game, 3, 3)
+
+    add_points(game, 0, 1)
+    assert game.score() == 'Advantage Player 2'
+
+    add_points(game, 1, 0)
+    assert game.score() == 'Deuce'
+
+    add_points(game, 0, 1)
+    assert game.score() == 'Advantage Player 2'
+
+    add_points(game, 0, 1)
+    assert game.score() == 'Player 2 wins'
 
 """
 Test cases I need to cover:
 
-Each player could have love, fifteen, thirty, fourty
-Players on equal score but less than or equal to thirty will be announced thirty all for example
-Players on equal score but both have at least 40 points, will be announced DEUCE
-Players on more than 40 and a clear 2 point difference, will be announced winner
-Players on more than 40 but less than 2 point difference, will be announced ADV
-Player with ADV winning the point, will be announced winner
+Each player could have love, fifteen, thirty, fourty - done
+Players on equal score but less than or equal to thirty will be announced thirty all for example - done
+Players on equal score but both have at least 40 points, will be announced DEUCE - done
+Players on more than 40 and a clear 2 point difference, will be announced winner - done
+Players on more than 40 but less than 2 point difference, will be announced ADV - done
+Player with ADV winning the point, will be announced winner 
 Player without ADV winning the point, will be announced DEUCE
 
 

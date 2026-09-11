@@ -10,10 +10,16 @@ class TennisGame():
       self.player1Score = 0
       self.player2Score = 0
 
+  def p1ScoresPoint(self):
+     self.player1Score += 1
+  
+  def p2ScoresPoint(self):
+     self.player2Score += 1
+
   def calculateAdvantage(self):
-     if (self.player1Score > 4 and self.player1Score > self.player2Score):
+     if (self.player1Score >= 4 and self.player1Score > self.player2Score):
         return 'Advantage Player 1'
-     elif (self.player2Score > 4 and self.player2Score > self.player1Score):
+     elif (self.player2Score >= 4 and self.player2Score > self.player1Score):
         return 'Advantage Player 2'
 
   def calculateWinner(self):
@@ -44,8 +50,4 @@ class TennisGame():
     else:
       return f'{self.scoreMap[self.player1Score]}-{self.scoreMap[self.player2Score]}'
 
-  def p1ScoresPoint(self):
-    self.player1Score += 1
-
-  def p2ScoresPoint(self):
-    self.player2Score += 1
+  
