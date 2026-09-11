@@ -128,7 +128,7 @@ Players on equal score but less than or equal to thirty will be announced thirty
 Players on equal score but both have at least 40 points, will be announced DEUCE - done
 Players on more than 40 and a clear 2 point difference, will be announced winner - done
 Players on more than 40 but less than 2 point difference, will be announced ADV - done
-Player with ADV winning the point, will be announced winner 
-Player without ADV winning the point, will be announced DEUCE
+Player with ADV winning the point, will be announced winner - done
+Player without ADV winning the point, will be announced DEUCE - done
 
 """
