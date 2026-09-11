@@ -10,6 +10,12 @@ class TennisGame():
       self.player1Score = 0
       self.player2Score = 0
 
+  def calculateAdvantage(self):
+     if (self.player1Score > 4 and self.player1Score > self.player2Score):
+        return 'Advantage Player 1'
+     elif (self.player2Score > 4 and self.player2Score > self.player1Score):
+        return 'Advantage Player 2'
+
   def calculateWinner(self):
     if self.player1Score == self.player2Score:
         return 'Deuce'
@@ -19,6 +25,10 @@ class TennisGame():
 
     elif self.player2Score >= 4 and self.player2Score >= self.player1Score + 2:
         return 'Player 2 wins'
+
+    else:
+       return self.calculateAdvantage()
+
     
   
   def score(self):
