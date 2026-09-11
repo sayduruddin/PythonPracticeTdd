@@ -35,19 +35,18 @@ class TennisGame():
     else:
        return self.calculateAdvantage()
 
-    
+  def calculateTie(self):
+     if (self.player1Score < 3):
+        return f'{self.scoreMap.get(self.player1Score)}-All'
+
+     return 'Deuce'
+        
   
   def score(self):
-    # If score is equal but less than 40 on scoreboard, can use -All
-    if (self.player1Score == self.player2Score and (self.player1Score < 3)):
-      return f'{self.scoreMap.get(self.player1Score)}-All'
-    # if score is equal but requires deuce
-    elif (self.player1Score == self.player2Score):
-       return 'Deuce'
-    # if either player has more than or equal to 4 points, love, 15, 30, 40, winner = 4
-    elif (self.player1Score >= 4 or self.player2Score >= 4):
+   if self.player1Score == self.player2Score:
+      return self.calculateTie()
+   
+   elif (self.player1Score >= 4 or self.player2Score >= 4):
       return self.calculateWinner()
-    else:
-      return f'{self.scoreMap[self.player1Score]}-{self.scoreMap[self.player2Score]}'
-
-  
+   
+   return f'{self.scoreMap[self.player1Score]}-{self.scoreMap[self.player2Score]}'

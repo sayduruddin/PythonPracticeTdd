@@ -131,5 +131,4 @@ Players on more than 40 but less than 2 point difference, will be announced ADV 
 Player with ADV winning the point, will be announced winner 
 Player without ADV winning the point, will be announced DEUCE
 
-
 """
